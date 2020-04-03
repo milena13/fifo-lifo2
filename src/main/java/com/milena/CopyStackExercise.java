@@ -1,39 +1,37 @@
-package com.milena;
+
 
 import java.util.Arrays;
 
-public class QueueExercise implements QueueInterface {
-
-    private int elementCount;
+public class CopyStackExercise {
     private int[] array;
+    private int elementCount;
 
-    public QueueExercise(int arraySize) {
+    public CopyStackExercise(int arraySize) {
         this.array = new int[arraySize];
-        this.elementCount = 0;
+        elementCount = 0;
     }
 
-    @Override
-    public void displayQueueMessage() {
+    public void add (int value) {
+        int [] dest = array;
 
-        System.out.println("Queue Interface check");
-    }
-    @Override
-    public void add(int value) {
-        int dest[] = array;
         if (elementCount == array.length) {
-            int[] newArray = new int[array.length + 1];
+            int [] newArray = new int[array.length * 2];
             dest = newArray;
         }
-        for (int i = elementCount; i > 0; i--) {
-            dest[i] = array[i - 1];
+
+        for (int i = 0; i < array.length; i++) {
+            dest[i] = array[i];
         }
-        dest[0] = value;
+
+        dest[elementCount] = value;
         array = dest;
         elementCount++;
+
         System.out.println(Arrays.toString(array));
+
     }
 
-    public void remove() {
+    public void remove () {
         int[] newArray = new int[array.length - 1];
 
         for (int i = 0; i < newArray.length; i++) {
@@ -45,13 +43,6 @@ public class QueueExercise implements QueueInterface {
     }
 
     public int getElementCount() {
-
         return elementCount;
     }
-
-}
-
-
-
-
-
+    }

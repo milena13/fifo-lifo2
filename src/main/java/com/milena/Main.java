@@ -17,11 +17,11 @@ public class Main {
         q.add(30);
         System.out.println("Queue array element count: " + q.getElementCount());
 
-        /*System.out.println("Queue exercise - remove method:");
+        System.out.println("Queue exercise - remove method:");
         q.remove();
         q.remove();
         q.remove();
-        System.out.println("Queue array element count: " + q.getElementCount());*/
+        System.out.println("Queue array element count: " + q.getElementCount());
 
         SecondQueue s = new SecondQueue(3);
 
