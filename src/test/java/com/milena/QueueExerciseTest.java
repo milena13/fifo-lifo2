@@ -1,14 +1,27 @@
 package com.milena;
 
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Test;
 
-class QueueExerciseTest {
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.is;
 
-    @org.junit.jupiter.api.Test
-    void displayQueueMessage() {
+public class QueueExerciseTest {
+
+    private QueueExercise q;
+
+    @Test
+    public void displayQueueMessage() {
+        System.out.println("Queue JUnit Test");
     }
 
-    @org.junit.jupiter.api.Test
-    void add() {
+    @Test
+    public void elementCountShouldBeEqualToTestValue() {
+        q = new QueueExercise(0);
+        q.add(50);
+        q.add(20);
+        q.add(70);
+        assertThat(q.getElementCount(), is(3));
     }
+
+
 }
