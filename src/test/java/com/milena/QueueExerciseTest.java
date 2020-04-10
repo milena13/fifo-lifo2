@@ -10,18 +10,34 @@ public class QueueExerciseTest {
     private QueueExercise q;
 
     @Test
-    public void displayQueueMessage() {
-        System.out.println("Queue JUnit Test");
-    }
-
-    @Test
-    public void elementCountShouldBeEqualToTestValue() {
+    public void arrayLengthShouldBeEqualToTestValue() {
         q = new QueueExercise(0);
         q.add(50);
         q.add(20);
         q.add(70);
-        assertThat(q.getElementCount(), is(3));
+        assertThat(q.getArray().length, is(3));
     }
 
+    @Test
+    public void elementAddedAtFirstIndexShouldBeEqualToTestValue() {
+        q = new QueueExercise(0);
+        q.add(50);
+        q.add(20);
+        q.add(70);
+        assertThat(q.getArray()[0], is(70));
+    }
+
+    @Test
+    public void testArrayLengthBeforeAndAfterElementRemoval() {
+        q = new QueueExercise(0);
+        q.add(50);
+        q.add(20);
+        q.add(70);
+        assertThat(q.getArray().length, is(3));
+        q.remove();
+        assertThat(q.getArray().length, is(2));
+        assertThat(q.getArray()[q.getArray().length - 1], is(20));
+
+    }
 
 }

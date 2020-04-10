@@ -13,11 +13,16 @@ public class QueueExercise implements QueueInterface {
     }
 
     @Override
-    public void displayQueueMessage() {
+    public int[] getArray() {
+        int[] arrayCopy = new int[array.length];
 
-        System.out.println("Queue Interface check");
+        for (int i = 0; i < array.length; i++) {
+            arrayCopy[i] = array[i];
+        }
+
+        return arrayCopy;
     }
-    @Override
+
     public void add(int value) {
         int dest[] = array;
         if (elementCount == array.length) {

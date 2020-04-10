@@ -7,20 +7,24 @@ public class StackExercise implements StackInterface {
     private int elementCount;
 
     public StackExercise(int size) {
-//        if (size>0){}
         this.array = new int[size];
         elementCount = 0;
     }
 
     @Override
-    public void displayStackMessage() {
+    public int[] getArray() {
+        int[] arrayCopy = new int[array.length];
 
-        System.out.println("Stack Interface check");
+        for (int i = 0; i < array.length; i++) {
+            arrayCopy[i] = array[i];
+        }
+
+        return arrayCopy;
     }
 
     @Override
     public void add (int value) {
-        int [] dest = new int[array.length+1];
+        int [] dest = new int[array.length + 1];
         for (int i = 0; i < array.length; i++) {
             dest[i] = array[i];
         }
@@ -42,6 +46,8 @@ public class StackExercise implements StackInterface {
     }
 
     public int getElementCount() {
+
         return elementCount;
     }
+
     }
